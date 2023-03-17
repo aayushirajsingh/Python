@@ -28,18 +28,17 @@ list1 = ['sem1', 'sem2']
 print("Values of history key: ", dict1.get("class").get("student").get("marks").get("history"))
 
 # Printing the key  of test2 and test1
-test_1 = dict1.get("class").get("student1").get("maths").sem[0].get("test1")
+test_1 = dict1["class"]["student1"]["marks"]["maths"]["sem2"][0]["test1"][0]
+test_2 =  dict1["class"]["student1"]["marks"]["maths"]["sem2"][0]["test2"]
+print("Values of test1 key: ", test_1) 
+print("Values of test2 key: ", test_2)
 
-# ["class"]["student1"]["marks"]["maths"]["sem2"][0]["test1"][0]
-print("Values of test1 key: ", test_1) # get and index
-# print("Values of test2 key: ", dict1["class"]["student1"]["marks"]["maths"]["sem2"][0]["test2"])
+# Updating the value of test1
+test_update = dict1["class"]["student1"]["marks"]["maths"]["sem2"][0]["test1"] = (22,)
+print("Updated value of test1: ", test_update[0])
+print(type(dict1["class"]["student1"]["marks"]["maths"]["sem2"][0]["test1"]))
 
-
-# v = dict1["class"]["student1"]["marks"]["maths"]["sem2"][0]["test1"] = tuple(22,)
-# print(type(v))
-# print(dict1)
-# print("After removing 12 from test1: ", dict1["class"]["student1"]["marks"]["maths"]["sem2"][0]["test1"])
-# yikes = dict1.get("class").get("student1").get("marks").get("maths")
-# yikes.clear()
-# print(dict1.get("class").get("student1").get("marks").get("maths"))
-# print(dict1)
+# Deleting the list of keys
+for item in list1:
+    dict1['class']['student1']['marks']['maths'].pop(item)
+print(dict1)

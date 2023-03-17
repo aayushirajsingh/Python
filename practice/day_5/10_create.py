@@ -3,29 +3,21 @@
 #    2) student_profile
 # User enter your name
 # Check the user enter name  and is staff than user student_profile can be create profile.student profile crate using practice program 9 using.
-#  Check the user enter name  and is active than user can not crate profile.
+# Check the user enter name  and is active than user can not crate profile.
 
 # dict1 = {'name': 'jay', 'designation': 'web', 'is_staff': True, 'is_active': False}
 # dict2 = {'student_profile': {}}
 
-# designation = input("Enter designation: ")
-is_staff = 'no'
-is_active = 'yes'
+dict1 = {'teacher1': {'name': 'seema', 'designation': 'teacher', 'is_staff': True, 'is_active': False}}
+dict2 = {'student_profile': {}}
 
-student_profile = {}
-staff = {'teacher1': {'name': 'seema', 'designation': '', 'is_staff': '', 'is_active': ''}}
+name_check = input("Enter name: ")
 
-staff = {'seema':['HOD','yes','yes'],
-         'kiran':['Teacher','yes','no'],
-         'harsh':['accountant','no','yes'],
-         'fizul':['accountant','no','no']}
-name = input("Enter name: ").islower()
-for item in staff:
-    if item == name and is_staff == 'yes' :
-        print("You can create student profile.")
-# for item in range(2):
-#     name = input("Enter the student name: ")
-#     stud_id = input("Enter the student id: ")
-
-#     student_profile[name] = stud_id
-# print(student_profile)
+if dict1['teacher1']['name'] == name_check and dict1['teacher1']['is_staff'] == True :
+    print("You can create student profile.")
+    name = input("Enter the student name: ")
+    stud_id = input("Enter the student id: ")
+    dict2[name] = stud_id
+    print(dict2)
+else:
+    print("You are not authorized to create a student profile.")
