@@ -17,7 +17,7 @@ if dict1['teacher1']['name'] == name_check and dict1['teacher1']['is_staff'] == 
     print("You can create student profile.")
     name = input("Enter the student name: ")
     stud_id = input("Enter the student id: ")
-    dict2[name] = stud_id
+    dict2.update({'student_profile': {'Name' : name, 'Student ID' : stud_id}})
     print(dict2)
 else:
     print("You are not authorized to create a student profile.")
